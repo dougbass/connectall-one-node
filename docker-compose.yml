@@ -1,0 +1,31 @@
+version: '3'
+services:
+  ca:
+    environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    - MYSQL_DATABASE=ConnectAll
+    build:
+      context: .
+      dockerfile: "connectall.docker"
+      args:
+        - INSTALLER=${INSTALLER:?The INSTALLER environment variable must include ConnectAll installer script filename}
+    image: connectall:${VERSION:?The VERSION environment variable must include the ConnectAll version eg 2.8.2}
+
+    ports:
+      - "${PUSH_PORT:-7070}:7070"
+      - "${GENERIC_PORT:-8090}:8090"
+      - "${ATTACHMENT_DOWNLOAD_PORT:-60000}:60000"
+      - "${RENDERER_PORT:-8098}:8098"
+      # Ports internal to the container that tomcat will need access to
+#		config.port=http:\/\/mule:8081\/config\/refresh
+#		activity.monitor.port=http:\/\/mule:9080
+#		scheduler.service.port=http:\/\/mule:9090
+      - "${WEB_PORT:-8080}:8080"
+    volumes:
+      - ${CONNECTALL:-mule}:/ConnectAll/mulesoft
+      - ${TOMCAT:-tomcat}:/ConnectAll/CATomcat
+      - ${MYSQL:-mysql}:/var/lib/mysql
+volumes:
+  mule:
+  tomcat:
+  mysql:

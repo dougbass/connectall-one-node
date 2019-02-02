@@ -1,0 +1,20 @@
+clear
+# Required arguments
+export INSTALLER=ConnectAll_Unix_2_9_0_Rf5e54eca_64.sh
+export VERSION=2.9.3
+
+#Optional arguments
+export PUSH_PORT=7070
+export GENERIC_PORT=8090
+export ATTACHMENT_DOWNLOAD_PORT=60000
+export RENDERER_PORT=8098
+export WEB_PORT=80
+
+# File storage locations. Default is in docker volumes
+#rm -rf ./mule
+#export CONNECTALL=./mule
+#export TOMCAT=./CATomcat
+#export MYSQL=./mysql
+
+docker-compose up --build # --force-recreate
+#docker image prune -f
