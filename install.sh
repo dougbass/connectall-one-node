@@ -44,11 +44,16 @@ else
   if [ ! -f $CATALINA_HOME/logs/ConnectAll.log ]; then
     echo "Change to the /ConnectAll folder"
     cd /ConnectAll
+
+    if [ ! -f ConnectAll.sh ]; then
+      wget -O ConnectAll.sh --user=connectall --password=C\$\$n3ct@11 http://downloads.go2group.com/CA/Release_2_9_0_patch3/doors/ConnectAll_Unix_2_9_0_Rf5e54eca_64.sh
+    fi
     echo "Make all the script executable"
     chmod +x $1
 #    chkconfig --add tomcat
     echo "Execute the installer"
     /ConnectAll/ConnectAll.sh -varfile /ConnectAll/connectall.varfile -q  -console   -Dinstall4j.keepLog=true   -Dinstall4j.logToStderr=true
+    cp -v /ConnectAll/readme.html $CATALINA_HOME/webapps/ROOT/index.jsp
 . /root/.bash_profile
 #    sleep 60
 #   /ConnectAll/set_mule_hostname.sh
