@@ -1,7 +1,7 @@
 clear
 # Required arguments
-export INSTALLER=ConnectAll_Unix_2_9_0_Rf5e54eca_64.sh
-export VERSION=2.9.3
+export INSTALLER=ConnectAll_Unix_2_8_4_16.sh
+export VERSION=2.8.4.16
 
 #Optional arguments
 export PUSH_PORT=7070
@@ -11,10 +11,14 @@ export RENDERER_PORT=8098
 export WEB_PORT=80
 
 # File storage locations. Default is in docker volumes
-#rm -rf ./mule
-#export CONNECTALL=./mule
-#export TOMCAT=./CATomcat
-#export MYSQL=./mysql
+#export CONNECTALL=../data/1-node-2.8.3.16/mule
+#export TOMCAT=../data/1-node-2.8.3.16/CATomcat
+#export MYSQL=../data/1-node-2.8.3.16/mysql
+#export CONNECTALL_HOME=../data/1-node-2.8.3.16/connectall_home
+
+if [ $1 == "clean" ]; then
+	rm -rf $CONNECTALL $TOMCAT $MYSQL $CONNECTALL_HOME
+fi
 
 docker-compose up --build # --force-recreate
 #docker image prune -f

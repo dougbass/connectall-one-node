@@ -25,7 +25,10 @@ export CONNECTALL=./mule; export INSTALLER=ConnectAll_Unix_2_8_3_R67dc0c2b_64.sh
 <br>
 Environment Variables<br>
 <ol>
-	<li>CONNECTALL - A local folder to store all the data. If this is not provided a volume called "mule" will be created for storage.<br>
+	<li>CONNECTALL - A local folder to store the mule executable. If this is not provided a volume called "mule" will be created for storage.<br>
+	<li>CONNECTALL_HOME - A local folder to store the ConnectAll data, eg, mapping data. If this is not provided a volume called connectall_home will be created for storage.<br> 
+	<li>TOMCAT - A local folder to store the Tomcat executable. If this is not provided a volume called tomcat will be created for storage.<br> 
+	<li>MYSQL - A local folder to store the ConnectAll database, eg, user account and record id maps. If this is not provided a volume called mysql will be created for storage.<br> 
 	<li>INSTALLER - REQUIRED The connectAll installer provided to you by sales@connectall.com.<br>
 	<li>VERSION - REQUIRED The tag that will be applied to the created images. The version of the installer is a good idea, eg, 2.8.3.11.<br>
 	<li>WEB_PORT - the port that Tomcat and the ConnectAll user interface is on. The default is 8080.<br>
@@ -37,12 +40,9 @@ Environment Variables<br>
 <br>
 Volumes<br>
 	<li>mule - Where the data for the application is stored unless you provide a local folder using the CONNECTALL environment variable<br>
-	<li>See the description of the MySql:5.6 image for additional volumes.<br>
-<br>
-Useful File Locations<br>
-	<li>up - A shell script to start up the container<br>
-	<li>/etc/init.d/tomcat - the startup script for tomcat<br>
-	<li>/etc/init.d/mule - the startup script for mule<br>
+	<li>connectall_home - Where the mapping data is stored unless you provide a local folder using the CONNECTALL_HOME environment variable<br>
+	<li>tomcat - Where the tomcat executable is installed unless you provide a local folder using the TOMCAT environment variable<br>
+	<li>mysql - Where the database is stored unless you provide a local folder using the MYSQL environment variable<br>
 <br>
 Built With<br>
 	<li>MySql:5.6 for the database image<br>
@@ -52,12 +52,12 @@ Limitations<br>
 	<li>Additional nodes (i.e. a cluster) cannot be spawned at this time but multiple containers (i.e. a vertical partition) can be started using different ports and file storage.<br>
 <br>
 Find Us<br>
-	<li>GitHub<br>
-	<li>ConnectAll<br>
-	<li>Support<br>
+	<li><a href="GitHub">https://github.com/dougbass/ConnectAll</a><br>
+	<li><a href="ConnectALL(tm)">https://www.connectall.com/ConnectAll</a><br>
+	<li><a href="https://jira.connectall.com/servicedesk/customer/portal/11">Support</a><br>
 <br>
 Authors<br>
-	<li>Doug Bass - Initial work - LinkedIn<br>
+	<li>Doug Bass - Initial work - <a href="https://www.linkedin.com/in/dougbass/">LinkedIn</a><br>
 <br>
 License<br>
 This project is licensed under the ConnectAll EULA - contact sales@connectall.com for details.<br>
