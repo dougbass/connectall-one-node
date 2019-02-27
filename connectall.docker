@@ -9,14 +9,27 @@ ADD connectall.varfile /ConnectAll/.
 ARG INSTALLER
 ADD ${INSTALLER} /ConnectAll/ConnectAll.sh
 ADD install.sh /ConnectAll/.
-#COPY configs/database configs/conf /ConnectAll
+#COPY configs/database configs/conf /ConnectAll/
 #ADD tomcat /etc/init.d/.
 #ADD set_mule_hostname.sh /ConnectAll/.
+
+# ConnectALL 2.8
 #ENV MULE_HOME=/ConnectAll/mulesoft/mule-standalone-3.6.1
-#ENV CONNECTALL_HOME=/ConnectAll/mulesoft/mule-standalone-3.6.1/database
-ENV CATALINA_HOME=/ConnectAll/CATomcat
 #ENV JAVA_HOME=/usr/local/bin/java1.7/jdk1.7.0_79
+ENV HOME_PROFILE=/root/.profile
+
+# ConnectALL 2.9
+#ENV MULE_HOME=/ConnectAll/mulesoft/mule-standalone-3.9.0
+#ENV JAVA_HOME=/usr/local/bin/java1.7/jdk1.8.0_171
+#ENV HOME_PROFILE=/opt/tomcat/.bashrc
+
+ENV CONNECTALL_HOME=/ConnectAll/connectall_home
+ENV CATALINA_HOME=/ConnectAll/CATomcat
+
 #ADD ConnectAll.war /ConnectAll/.
+
+EXPOSE 7070 8090 60000 8098 8080
+VOLUME /ConnectAll/mulesoft /ConnectAll/CATomcat /ConnectAll/connectall_home /var/lib/mysql
 #ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/ConnectAll/install.sh","/ConnectAll/ConnectAll.sh","connectall.varfile","/ConnectAll/set_mule_hostname.sh","/usr/bin/tail -f /ConnectAll/CATomcat/logs/catalina.out"]
 #/dev/null"]

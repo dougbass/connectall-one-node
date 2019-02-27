@@ -1,10 +1,10 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
 {\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Consolas;
-\f3\fnil\fcharset0 HelveticaNeue-Italic;}
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 HelveticaNeue-Italic;}
 {\colortbl;\red255\green255\blue255;\red27\green31\blue34;\red10\green77\blue204;\red244\green246\blue249;
-\red203\green35\blue57;\red21\green23\blue26;}
+\red203\green35\blue57;\red21\green23\blue26;\red0\green128\blue128;}
 {\*\expandedcolortbl;;\cssrgb\c14118\c16078\c18039;\cssrgb\c1176\c40000\c83922;\cssrgb\c96471\c97255\c98039;
-\cssrgb\c84314\c22745\c28627;\cssrgb\c10588\c12157\c13725\c4706;}
+\cssrgb\c84314\c22745\c28627;\cssrgb\c10588\c12157\c13725\c4706;\csgenericrgb\c0\c50196\c50196;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
@@ -86,8 +86,14 @@ Linux}}\expnd0\expndtw0\kerning0
 \f2\b0\fs27\fsmilli13600 \cf2 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
 CONNECTALL
 \f1\fs32 \cb1 \'a0- A local folder to store all the data. If this is not provided a volume called "mule" will be created for storage.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\cf0 CONNECTALL_HOME - A local folder to store the ConnectAll data, \ul eg\ulnone , mapping data. If this is not provided a volume called connectall_home will be created for storage.\
+{\listtext	\uc0\u8226 	}TOMCAT - A local folder to store the \ul Tomcat\ulnone  executable. If this is not provided a volume called \ul tomcat\ulnone  will be created for storage. \
+{\listtext	\uc0\u8226 	}MYSQL - A local folder to store the ConnectAll database, \ul eg\ulnone , user account and record id maps. If this is not provided a volume called \ul mysql\ulnone  will be created for storage.\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
 \ls2\ilvl0
-\f2\fs27\fsmilli13600 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\f2\fs27\fsmilli13600 \cf2 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
 INSTALLER
 \f1\fs32 \cb1 \'a0- REQUIRED The connectAll installer provided to you by\'a0{\field{\*\fldinst{HYPERLINK "mailto:sales@connectall.com"}}{\fldrslt \cf3 sales@connectall.com}}.\
 \ls2\ilvl0
@@ -124,12 +130,15 @@ RENDERER_PORT
 \f2\b0\fs27\fsmilli13600 \cf2 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
 mule
 \f1\fs32 \cb1 \'a0- Where the data for the application is stored unless you provide a local folder using the CONNECTALL environment variable\
-\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
-\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-See the description of the MySql:5.6 image for additional volumes.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}
+\f3\fs24 \cf0 connectall_home - Where the mapping data is stored unless you provide a local folder using the CONNECTALL_HOME environment variable\cf7 \
+\ls3\ilvl0\cf0 {\listtext	\uc0\u8226 	}\ul tomcat\ulnone  - Where the \ul tomcat\ulnone  executable is installed unless you provide a local folder using the TOMCAT environment variable\cf7 \
+\ls3\ilvl0\cf0 {\listtext	\uc0\u8226 	}\ul mysql\ulnone  - Where the database is stored unless you provide a local folder using the MYSQL environment variable\cf7 \
 \pard\pardeftab720\sl320\partightenfactor0
 
-\f0\b \cf3 \
+\f0\b\fs32 \cf3 \expnd0\expndtw0\kerning0
+\
 \pard\pardeftab720\sl400\sa320\partightenfactor0
 \cf2 Useful File Locations\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
@@ -137,14 +146,6 @@ See the description of the MySql:5.6 image for additional volumes.\
 \f2\b0\fs27\fsmilli13600 \cf2 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
 up
 \f1\fs32 \cb1 \'a0- A shell script to start up the container\
-\ls4\ilvl0
-\f2\fs27\fsmilli13600 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-/etc/init.d/tomcat
-\f1\fs32 \cb1 \'a0- the startup script for tomcat\
-\ls4\ilvl0
-\f2\fs27\fsmilli13600 \cb6 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-/etc/init.d/mule
-\f1\fs32 \cb1 \'a0- the startup script for mule\
 \pard\pardeftab720\sl360\partightenfactor0
 
 \f0\b\fs36 \cf3 \
@@ -191,7 +192,7 @@ Support}}\cf2 \expnd0\expndtw0\kerning0
 \fs32 \cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
 Doug Bass
 \f1\b0 \'a0-\'a0
-\f3\i Initial work
+\f4\i Initial work
 \f1\i0 \'a0-\'a0{\field{\*\fldinst{HYPERLINK "https://www.linkedin.com/in/dougbass/"}}{\fldrslt \cf3 LinkedIn}}\
 \pard\pardeftab720\sl360\partightenfactor0
 

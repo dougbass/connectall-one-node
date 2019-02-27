@@ -25,7 +25,10 @@ services:
       - ${CONNECTALL:-mule}:/ConnectAll/mulesoft
       - ${TOMCAT:-tomcat}:/ConnectAll/CATomcat
       - ${MYSQL:-mysql}:/var/lib/mysql
+      - ${CONNECTALL_HOME:-connectall_home}:/ConnectAll/connectall_home
+
 volumes:
   mule:
   tomcat:
   mysql:
+  connectall_home:

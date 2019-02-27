@@ -26,7 +26,7 @@ configPort=8081
 activityMonitorPort=9080
 
 # The shared volume to store the application link jsons
-CONNECTALL_HOME=/ConnectAll/mulesoft/mule-standalone-3.9.0/database
+CONNECTALL_HOME=/ConnectAll/connectall_home
 
 # Ports available outside docker
 pushServicePort=7070
