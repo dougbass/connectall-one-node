@@ -39,6 +39,9 @@ export CONNECTALL=./mule; export INSTALLER=ConnectAll_Unix_2_8_3_R67dc0c2b_64.sh
 #### Environment Variables
 
 * `CONNECTALL` - A local folder to store all the data. If this is not provided a volume called "mule" will be created for storage.
+* `CONNECTALL_HOME` - A local folder to store the ConnectAll data, eg, mapping data. If this is not provided a volume called connectall_home will be created for storage.
+* `TOMCAT` - A local folder to store the Tomcat executable. If this is not provided a volume called tomcat will be created for storage.
+* `MYSQL` - A local folder to store the ConnectAll database, eg, user account and record id maps. If this is not provided a volume called mysql will be created for storage.
 * `INSTALLER` - REQUIRED The connectAll installer provided to you by sales@connectall.com.
 * `VERSION` - REQUIRED The tag that will be applied to the created images. The version of the installer is a good idea, eg, 2.8.3.11.
 * `WEB_PORT` - the port that Tomcat and the ConnectAll user interface is on. The default is 8080.
@@ -50,13 +53,13 @@ export CONNECTALL=./mule; export INSTALLER=ConnectAll_Unix_2_8_3_R67dc0c2b_64.sh
 #### Volumes
 
 * `mule` - Where the data for the application is stored unless you provide a local folder using the CONNECTALL environment variable
-* See the description of the MySql:5.6 image for additional volumes.
+* `connectall_home` - Where the mapping data is stored unless you provide a local folder using the CONNECTALL_HOME environment variable
+* `tomcat` - Where the tomcat executable is installed unless you provide a local folder using the TOMCAT environment variable
+* `mysql` - Where the database is stored unless you provide a local folder using the MYSQL environment variable
 
 #### Useful File Locations
 
 * `up` - A shell script to start up the container
-* `/etc/init.d/tomcat` - the startup script for tomcat
-* `/etc/init.d/mule` - the startup script for mule
 
 ## Built With
 
